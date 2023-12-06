@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">disp-moveis-3</string>
+    <string name="headerText">TaskHub</string>
+    <string name="button1">Criar Tarefas</string>
+    <string name="button2">Listar Tarefas</string>
+    <string name="button3">Deletar Tarefas</string>
+</resources>
