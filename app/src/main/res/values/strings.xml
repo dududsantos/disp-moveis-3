@@ -8,8 +8,9 @@
     <string name="taskName"> Nome:</string>
     <string name="dateTask"> Data:</string>
     <string name="ugerncyTask"> Nível de Urgência:</string>
-    <string name="checkbox1">Leve</string>
-    <string name="checkbox2">Importante</string>
-    <string name="checkbox3">Urgente</string>
+    <string name="optionLeve">Leve</string>
+    <string name="optionImportant">Importante</string>
+    <string name="optionUrgent">Urgente</string>
+    <string name="add">ADICIONAR</string>
 
 </resources>
