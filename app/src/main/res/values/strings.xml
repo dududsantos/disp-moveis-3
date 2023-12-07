@@ -4,4 +4,12 @@
     <string name="button1">Criar Tarefas</string>
     <string name="button2">Listar Tarefas</string>
     <string name="button3">Deletar Tarefas</string>
+    <string name="createHeaderText">Adicione uma Tarefa</string>
+    <string name="taskName"> Nome:</string>
+    <string name="dateTask"> Data:</string>
+    <string name="ugerncyTask"> Nível de Urgência:</string>
+    <string name="checkbox1">Leve</string>
+    <string name="checkbox2">Importante</string>
+    <string name="checkbox3">Urgente</string>
+
 </resources>
