@@ -2,5 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="mainButtons">#8BC34A</color>
+    <color name="mainButtons">#68a324</color>
+    <color name="blue">#445ae3</color>
+    <color name="darkGray">#010100</color>
+    <color name="lightGray">#e6e6e6</color>
 </resources>
