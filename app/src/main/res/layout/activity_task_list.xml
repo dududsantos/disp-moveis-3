@@ -40,8 +40,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:layout_width="353dp"
-        android:layout_height="499dp"
+        android:id="@+id/todolist"
+        android:layout_width="350dp"
+        android:layout_height="592dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -37,13 +37,14 @@ public class TaskManager {
         return null;
     }
 
-    public static boolean removeTaskByCode(String taskCode) {
+    public static boolean removeTaskByName(String taskCode) {
         for (Task task : taskList) {
-            if (task.getTaskCode().equals(taskCode)) {
+            if (task.getTaskName().equals(taskCode)) {
                 taskList.remove(task);
                 return true;
             }
         }
         return false;
     }
+
 }

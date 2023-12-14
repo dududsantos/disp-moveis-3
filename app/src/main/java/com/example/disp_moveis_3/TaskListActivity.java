@@ -17,23 +17,21 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class TaskListActivity extends AppCompatActivity {
 
-    private ArrayAdapter<Task> adapter;
+    ArrayAdapter<Task> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_list);
-        lerArquivoProdutos();
+        lerArquivo();
 
         List<Task> taskList = TaskManager.getTaskList();
         if (taskList != null) {
-            ListView listView = findViewById(R.id.list);
+            ListView listView = findViewById(R.id.todolist);
             adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, taskList);
             listView.setAdapter(adapter);
 
@@ -45,6 +43,10 @@ public class TaskListActivity extends AppCompatActivity {
                     if (task != null) {
                         Intent intent = new Intent(TaskListActivity.this, TaskDetailActivity.class);
                         intent.putExtra("Id", task.getTaskCode());
+                        intent.putExtra("taskName", task.getTaskName());
+                        intent.putExtra("taskDate", task.getTaskDate());
+                        intent.putExtra("taskUrgency", task.getTaskUrgency());
+
                         startActivity(intent);
                     }
                 }
@@ -58,6 +60,8 @@ public class TaskListActivity extends AppCompatActivity {
             public void onClick(View v ){
                 Intent intent = new Intent(TaskListActivity.this, TaskCreateActivity.class);
                 startActivity(intent);
+                Toast.makeText(TaskListActivity.this, "Tarefa cadastrada com sucesso!!", Toast.LENGTH_SHORT).show();
+                atualizarListView();
             }
         });
     }
@@ -65,10 +69,10 @@ public class TaskListActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        salvarArquivoProdutos();
+        salvarArquivo();
     }
 
-    private void lerArquivoProdutos() {
+    private void lerArquivo() {
         try {
             InputStreamReader arquivo = new InputStreamReader(openFileInput("tasks"));
             BufferedReader bufferedReader = new BufferedReader(arquivo);
@@ -98,7 +102,7 @@ public class TaskListActivity extends AppCompatActivity {
         }
     }
 
-    private void salvarArquivoProdutos() {
+    private void salvarArquivo() {
         try {
             FileOutputStream arquivo = openFileOutput("tasks", Context.MODE_PRIVATE);
             OutputStreamWriter escritor = new OutputStreamWriter(arquivo);
@@ -118,6 +122,20 @@ public class TaskListActivity extends AppCompatActivity {
         } catch (IOException e) {
             Toast.makeText(this, "Não foi possível salvar o arquivo de produtos", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public  void atualizarListView() {
+
+        if (adapter == null) {
+            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, TaskManager.getTaskList());
+            ListView listView = findViewById(R.id.todolist);
+            listView.setAdapter(adapter);
+        }
+
+        List<Task> taskList = TaskManager.getTaskList();
+//        adapter.clear();
+//        adapter.addAll(taskList);
+//        adapter.notifyDataSetChanged();
     }
 
 

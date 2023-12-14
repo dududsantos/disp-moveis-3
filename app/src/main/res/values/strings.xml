@@ -15,5 +15,6 @@
     <string name="optionImportant">Importante</string>
     <string name="optionUrgent">Urgente</string>
     <string name="add">ADICIONAR</string>
+    <string name="checkTask">Feito</string>
 
 </resources>
