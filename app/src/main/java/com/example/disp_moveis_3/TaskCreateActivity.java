@@ -3,6 +3,7 @@ package com.example.disp_moveis_3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -28,7 +29,12 @@ public class TaskCreateActivity extends AppCompatActivity {
 
         Button addButton = findViewById(R.id.addButton);
 
-
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addTask();
+            }
+        });
     }
 
     private void addTask() {
@@ -51,7 +57,7 @@ public class TaskCreateActivity extends AppCompatActivity {
             Toast.makeText(this, "Erro ao analisar a data", Toast.LENGTH_SHORT).show();
         }
 
-        if (name.isEmpty() || date==null || option.isEmpty()) {
+            if (name.isEmpty() || date==null || option.isEmpty()) {
             Toast.makeText(this, "Há campos não preenchidos!", Toast.LENGTH_SHORT).show();
             return;
         }

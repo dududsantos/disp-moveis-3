@@ -14,14 +14,6 @@ public class TaskDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_list);
 
-        Button buttonAdd = findViewById(R.id.button1);
-        buttonAdd.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v ){
-                Intent intent = new Intent(TaskDetailActivity.this, TaskCreateActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
 }

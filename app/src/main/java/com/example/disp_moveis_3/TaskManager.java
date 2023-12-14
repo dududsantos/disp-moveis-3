@@ -7,10 +7,10 @@ import java.util.List;
 public class TaskManager {
 
     private static com.example.disp_moveis_3.TaskManager instance;
-    private static List<Task> productList;
+    private static List<Task> taskList;
 
     private TaskManager() {
-        productList = new ArrayList<>();
+        taskList = new ArrayList<>();
     }
 
     public static synchronized com.example.disp_moveis_3.TaskManager getInstance() {
@@ -21,26 +21,26 @@ public class TaskManager {
     }
 
     public static List<Task> getTaskList() {
-        return productList;
+        return taskList;
     }
 
-    public void addTask(Task product) {
-        productList.add(product);
+    public void addTask(Task task) {
+        taskList.add(task);
     }
 
-    public static Task getTaskByName(String productCode) {
-        for (Task product : productList) {
-            if (product.getTaskName().equals(productCode)) {
-                return product;
+    public static Task getTaskByCode(String taskCode) {
+        for (Task task : taskList) {
+            if (task.getTaskCode().equals(taskCode)) {
+                return task;
             }
         }
         return null;
     }
 
-    public static boolean removeTaskByName(String productCode) {
-        for (Task product : productList) {
-            if (product.getTaskName().equals(productCode)) {
-                productList.remove(product);
+    public static boolean removeTaskByCode(String taskCode) {
+        for (Task task : taskList) {
+            if (task.getTaskCode().equals(taskCode)) {
+                taskList.remove(task);
                 return true;
             }
         }
