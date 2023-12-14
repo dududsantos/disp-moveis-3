@@ -2,6 +2,7 @@ package com.example.disp_moveis_3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,35 +41,35 @@ public class TaskCreateActivity extends AppCompatActivity {
     private void addTask() {
         String name = nameEditText.getText().toString();
         String option = urgencyOptions.getTransitionName();
-        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
         String textoData = dateEditText.getText().toString();
-        Date date = null;
 
-        try{
-            if (textoData.matches("\\d{2}/\\d{2}/\\d{4}")) {
-                 date = formatoData.parse(textoData);
-            }
-            else {
-                Toast.makeText(this, "Formato de data inválido", Toast.LENGTH_SHORT).show();
-            }
-        }catch (ParseException e) {
-            e.printStackTrace();
+        if (textoData.matches("\\d{2}/\\d{2}/\\d{4}")) {
 
-            Toast.makeText(this, "Erro ao analisar a data", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(this, "Formato de data inválido", Toast.LENGTH_SHORT).show();
         }
 
-            if (name.isEmpty() || date==null || option.isEmpty()) {
+        if (name.isEmpty() || textoData.isEmpty()) {
             Toast.makeText(this, "Há campos não preenchidos!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        String taskCode = String.valueOf(TaskManager.getTaskList().size() + 1);
+        int taskCode = 0;
+        if(TaskManager.getTaskList() !=null){
+            taskCode = TaskManager.getTaskList().size() + 1;
+        }
 
-        Task task = new Task( name, date, option, taskCode);
+
+        Task task = new Task( name, textoData, option, String.valueOf(taskCode));
         TaskManager.getInstance().addTask(task);
 
         clearFields();
         Toast.makeText(this, "Produto cadastrado.", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(TaskCreateActivity.this, TaskListActivity.class);
+        startActivity(intent);
+
     }
 
     private void clearFields() {
