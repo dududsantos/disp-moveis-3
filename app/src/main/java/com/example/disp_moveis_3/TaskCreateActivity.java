@@ -44,7 +44,6 @@ public class TaskCreateActivity extends AppCompatActivity {
                  date = formatoData.parse(textoData);
             }
             else {
-
                 Toast.makeText(this, "Formato de data inválido", Toast.LENGTH_SHORT).show();
             }
         }catch (ParseException e) {
