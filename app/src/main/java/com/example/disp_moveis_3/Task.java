@@ -6,14 +6,20 @@ import java.util.Date;
 
 public class Task {
 
-    private String taskName, taskUrgency;
+    private String taskName, taskUrgency, taskCode;
     private Date taskDate;
 
-    public Task(String taskName, Date taskDate, String taskUrgency ) {
+    public Task(String taskName, Date taskDate, String taskUrgency, String taskCode ) {
+        this.taskCode = taskCode;
         this.taskName = taskName;
         this.taskDate = taskDate;
         this.taskUrgency = taskUrgency;
+    }
 
+    public String getTaskCode(){return taskCode;}
+
+    public void setTaskCode(String code){
+        this.taskCode = code;
     }
 
     public Date getTaskDate() {

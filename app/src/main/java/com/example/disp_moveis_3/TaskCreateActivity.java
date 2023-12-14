@@ -34,7 +34,6 @@ public class TaskCreateActivity extends AppCompatActivity {
     private void addTask() {
         String name = nameEditText.getText().toString();
         String option = urgencyOptions.getTransitionName();
-
         SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
         String textoData = dateEditText.getText().toString();
         Date date = null;
@@ -52,16 +51,15 @@ public class TaskCreateActivity extends AppCompatActivity {
             Toast.makeText(this, "Erro ao analisar a data", Toast.LENGTH_SHORT).show();
         }
 
-
-
-
         if (name.isEmpty() || date==null || option.isEmpty()) {
             Toast.makeText(this, "Há campos não preenchidos!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        Task task = new Task( name, date, option);
-        //ProductManager.getInstance().addProduct(produto);
+        String taskCode = String.valueOf(TaskManager.getTaskList().size() + 1);
+
+        Task task = new Task( name, date, option, taskCode);
+        TaskManager.getInstance().addTask(task);
 
         clearFields();
         Toast.makeText(this, "Produto cadastrado.", Toast.LENGTH_SHORT).show();
