@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">disp-moveis-3</string>
     <string name="headerText">TaskHub</string>
-    <string name="button1">Criar Tarefas</string>
-    <string name="button2">Listar Tarefas</string>
+    <string name="h1Text">Seja organizado.</string>
+    <string name="h2Text">Começe agora.</string>
+    <string name="imgDescription">Desenho de garota utilizando o computador</string>
+    <string name="button1">+</string>
+    <string name="button2">Ver minhas tarefas</string>
     <string name="button3">Deletar Tarefas</string>
     <string name="createHeaderText">Adicione uma Tarefa</string>
     <string name="taskName"> Nome:</string>

@@ -4,81 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue"
     tools:context=".MainActivity">
 
-    <View
-        android:id="@+id/headerView"
-        android:layout_width="406dp"
-        android:layout_height="91dp"
-        android:background="@color/mainButtons"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+
+    <TextView
+        android:id="@+id/headerText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="560dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/headerText"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonGoToTasks"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.001" />
+        app:layout_constraintVertical_bias="0.47" />
 
     <TextView
         android:id="@+id/headerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/headerText"
+        android:text="@string/h1Text"
         android:textColor="@color/white"
-        android:textSize="38sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:textSize="42sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="217dp"
-        android:layout_height="89dp"
-        android:background="@color/mainButtons"
-        android:backgroundTintMode="multiply"
-        android:text="@string/button1"
-        android:textColorHighlight="#A35757"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerView"
-        app:layout_constraintVertical_bias="0.526" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="217dp"
-        android:layout_height="89dp"
-        android:background="@color/mainButtons"
+        android:id="@+id/buttonGoToTasks"
+        android:layout_width="220dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/darkGray"
+        android:radius="10dp"
         android:text="@string/button2"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="20sp"
+        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerView"
-        app:layout_constraintVertical_bias="0.367" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="217dp"
-        android:layout_height="89dp"
-        android:background="@color/mainButtons"
-        android:text="@string/button3"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.22" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="117dp"
-        android:layout_height="112dp"
-        app:srcCompat="@mipmap/x"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="603dp" />
+        android:layout_width="384dp"
+        android:layout_height="367dp"
+        android:contentDescription="@string/imgDescription"
+        app:layout_constraintBottom_toTopOf="@+id/headerText3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.42"
+        app:srcCompat="@mipmap/image" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:text="@string/h2Text"
+        android:textColor="@color/darkGray"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

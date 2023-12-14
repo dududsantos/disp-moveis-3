@@ -15,12 +15,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Button buttonCreate = findViewById(R.id.button1);
+        Button buttonTarefas = findViewById(R.id.buttonGoToTasks);
 
-        buttonCreate.setOnClickListener(new View.OnClickListener(){
+        buttonTarefas.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v ){
-                    Intent intent = new Intent(MainActivity.this, TaskCreateActivity.class);
+                    Intent intent = new Intent(MainActivity.this, TaskListActivity.class);
                     startActivity(intent);
         }
         });
